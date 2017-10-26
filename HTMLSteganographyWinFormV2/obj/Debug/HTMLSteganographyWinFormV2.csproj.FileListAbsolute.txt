@@ -1,0 +1,36 @@
+D:\learn\diplom\find in the internet\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.csprojResolveAssemblyReference.cache
+D:\learn\diplom\find in the internet\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.Form1.resources
+D:\learn\diplom\find in the internet\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.Properties.Resources.resources
+D:\learn\diplom\find in the internet\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.csproj.GenerateResource.Cache
+D:\learn\diplom\find in the internet\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\bin\Debug\HTMLSteganographyWinFormV2.exe.config
+D:\learn\diplom\find in the internet\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\bin\Debug\HTMLSteganographyWinFormV2.exe
+D:\learn\diplom\find in the internet\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\bin\Debug\HTMLSteganographyWinFormV2.pdb
+D:\learn\diplom\find in the internet\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.exe
+D:\learn\diplom\find in the internet\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.pdb
+C:\Users\BIGNATURALTITS\Desktop\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\bin\Debug\HTMLSteganographyWinFormV2.exe.config
+C:\Users\BIGNATURALTITS\Desktop\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.exe
+C:\Users\BIGNATURALTITS\Desktop\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.pdb
+C:\Users\BIGNATURALTITS\Desktop\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\bin\Debug\HTMLSteganographyWinFormV2.exe
+C:\Users\BIGNATURALTITS\Desktop\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\bin\Debug\HTMLSteganographyWinFormV2.pdb
+C:\Users\BIGNATURALTITS\Desktop\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.csprojResolveAssemblyReference.cache
+C:\Users\BIGNATURALTITS\Desktop\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.Form1.resources
+C:\Users\BIGNATURALTITS\Desktop\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.Properties.Resources.resources
+C:\Users\BIGNATURALTITS\Desktop\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.csproj.GenerateResource.Cache
+D:\learn\diplom\programms\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\bin\Debug\HTMLSteganographyWinFormV2.exe.config
+D:\learn\diplom\programms\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.exe
+D:\learn\diplom\programms\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.pdb
+D:\learn\diplom\programms\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\bin\Debug\HTMLSteganographyWinFormV2.exe
+D:\learn\diplom\programms\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\bin\Debug\HTMLSteganographyWinFormV2.pdb
+D:\learn\diplom\programms\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.csprojResolveAssemblyReference.cache
+D:\learn\diplom\programms\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.Form1.resources
+D:\learn\diplom\programms\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.Properties.Resources.resources
+D:\learn\diplom\programms\HTMLSteganographyWinFormV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.csproj.GenerateResource.Cache
+D:\learn\diplom\programms\MarkupSteganography\HTMLSteganographyWinFormV2\bin\Debug\HTMLSteganographyWinFormV2.exe.config
+D:\learn\diplom\programms\MarkupSteganography\HTMLSteganographyWinFormV2\bin\Debug\HTMLSteganographyWinFormV2.exe
+D:\learn\diplom\programms\MarkupSteganography\HTMLSteganographyWinFormV2\bin\Debug\HTMLSteganographyWinFormV2.pdb
+D:\learn\diplom\programms\MarkupSteganography\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.csprojResolveAssemblyReference.cache
+D:\learn\diplom\programms\MarkupSteganography\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.Form1.resources
+D:\learn\diplom\programms\MarkupSteganography\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.Properties.Resources.resources
+D:\learn\diplom\programms\MarkupSteganography\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.csproj.GenerateResource.Cache
+D:\learn\diplom\programms\MarkupSteganography\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.exe
+D:\learn\diplom\programms\MarkupSteganography\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.pdb
