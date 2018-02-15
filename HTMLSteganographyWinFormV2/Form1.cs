@@ -57,21 +57,23 @@ namespace HTMLSteganographyWinFormV2
                 {
                     try
                     {
-                    FileManager.CopyFileAndChangeExtentionToZip(openFileDialog.FileName);
+                        FileManager.CopyFileAndChangeExtentionToZip(openFileDialog.FileName);
 
-                    string xmlDocument = FileManager.ReadDocumentFromZipFile("./1.zip");
+                        string xmlDocument = FileManager.ReadDocumentFromZipFile("./1.zip");
 
-                    docxContainer = new DOCXFile();
-                    docxContainer.document = new HTMLFile();
-                    docxContainer.document.File = new StringBuilder(xmlDocument);
+                        docxContainer = new DOCXFile();
+                        docxContainer.document = new HTMLFile();
+                        docxContainer.document.File = new StringBuilder(xmlDocument);
 
-                    containerCapacity.Text = (docxContainer.document
-                        .GetContainerCapacity(Convert.ToInt32(bitsInOneSymbolTextBox.Text))
-                        - endOfMessageFlag.Length)
-                        .ToString();
-                    } catch(Exception)
+                        containerCapacity.Text = (docxContainer.document
+                            .GetContainerCapacity(Convert.ToInt32(bitsInOneSymbolTextBox.Text))
+                            - endOfMessageFlag.Length)
+                            .ToString();
+                    }
+                    catch (Exception)
                     {
                         MessageBox.Show("Ошибка в структуре документа");
+                        FileManager.DeleteTempArchive("./1.zip");
                     }
                 }
                 else
@@ -130,10 +132,15 @@ namespace HTMLSteganographyWinFormV2
                     MessageBox.Show("В контейнере нет места");
                 }
             }
-            else if(docxContainer != null)
+            else if (docxContainer != null)
             {
                 if (Convert.ToInt32(containerCapacity.Text) >= 0)
                 {
+                    if(embedMessage.Text.Length == 0)
+                    {
+                        MessageBox.Show("Введите сообщение");
+                        return;
+                    }
                     Embedder.EmbedMessage(docxContainer.document, embedMessage.Text,
                                             Convert.ToInt32(bitsInOneSymbolTextBox.Text));
                     FileManager.RemoveDocumentFilefromZipArchive("./1.zip", "word/document.xml");
@@ -176,7 +183,7 @@ namespace HTMLSteganographyWinFormV2
                 string filePathToContainer = openFileDialog.FileName;
                 string fileExtention = filePathToContainer.Substring(filePathToContainer.IndexOf('.'));
 
-                if(fileExtention == ".xml")
+                if (fileExtention == ".xml")
                 {
                     HTMLFileWithMessage.File = new StringBuilder(
                                         FileManager.ReadHTMLFile(
@@ -185,7 +192,8 @@ namespace HTMLSteganographyWinFormV2
                     string extractedMessage = Extracter.ExtractMessage(HTMLFileWithMessage, Convert.ToInt32(bitsInOneSymbolTextBox.Text));
                     openedContainerLabel.Text = filePathToContainer;
                     extractedMessaageTextBox.Text = extractedMessage;
-                } else if(fileExtention == ".docx")
+                }
+                else if (fileExtention == ".docx")
                 {
                     FileManager.CopyFileAndChangeExtentionToZip(openFileDialog.FileName);
 
@@ -200,9 +208,14 @@ namespace HTMLSteganographyWinFormV2
                     extractedMessaageTextBox.Text = extractedMessage;
                     FileManager.DeleteTempArchive("./1.zip");
                 }
-                
+
 
             }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FileManager.DeleteTempArchive("./1.zip");
         }
     }
 }

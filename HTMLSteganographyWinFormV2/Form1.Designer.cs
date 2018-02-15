@@ -173,6 +173,7 @@
             this.Controls.Add(this.openHTMLFile);
             this.Name = "Form1";
             this.Text = "MarkupStego";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.bitsInOneSymbolTextBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
