@@ -55,6 +55,8 @@ namespace HTMLSteganographyWinFormV2
                 }
                 else if (fileExctension == ".docx")
                 {
+                    try
+                    {
                     FileManager.CopyFileAndChangeExtentionToZip(openFileDialog.FileName);
 
                     string xmlDocument = FileManager.ReadDocumentFromZipFile("./1.zip");
@@ -67,6 +69,14 @@ namespace HTMLSteganographyWinFormV2
                         .GetContainerCapacity(Convert.ToInt32(bitsInOneSymbolTextBox.Text))
                         - endOfMessageFlag.Length)
                         .ToString();
+                    } catch(Exception)
+                    {
+                        MessageBox.Show("Ошибка в структуре документа");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Указан неверный тип файла");
                 }
 
                 openedContainerLabel.Text = filePathToContainer;

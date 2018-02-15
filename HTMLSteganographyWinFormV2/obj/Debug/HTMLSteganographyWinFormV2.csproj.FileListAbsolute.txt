@@ -34,3 +34,4 @@ D:\learn\diplom\programms\MarkupSteganography\HTMLSteganographyWinFormV2\obj\Deb
 D:\learn\diplom\programms\MarkupSteganography\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.csproj.GenerateResource.Cache
 D:\learn\diplom\programms\MarkupSteganography\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.exe
 D:\learn\diplom\programms\MarkupSteganography\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.pdb
+D:\learn\diplom\programms\MarkupSteganography\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.csproj.CoreCompileInputs.cache
