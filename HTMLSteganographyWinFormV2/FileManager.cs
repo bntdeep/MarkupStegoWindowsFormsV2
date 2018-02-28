@@ -32,7 +32,7 @@ namespace HTMLSteganographyWinFormV2
         }
         public static void CopyFileAndChangeExtentionToDOCX(String file, string fileDestination)
         {
-            File.Copy(file, Path.ChangeExtension(fileDestination, ".docx"));
+            File.Copy(file, Path.ChangeExtension(fileDestination, ".docx"),true);
         }
         public static void DeleteTempArchive(string tempArchive)
         {
