@@ -45,7 +45,7 @@ namespace HTMLSteganographyWinFormV2
             }
             catch (IndexOutOfRangeException e)
             {
-                throw e.Message;
+                return e.Message;
             }
 
 
