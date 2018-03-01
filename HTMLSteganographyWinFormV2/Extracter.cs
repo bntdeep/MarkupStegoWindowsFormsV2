@@ -20,22 +20,34 @@ namespace HTMLSteganographyWinFormV2
                     if (html.File[i] == '\'')
                     {
                         extractedMessage.Append("0");
-                        while (html.File[++i] != '\'') ;
+                        while (html.File[++i] != '\'')
+                        {
+                            if (FileCrashedByZero(extractedMessage))
+                            {
+                                return RestoreMessage(extractedMessage.ToString(), bitsInOneCharacter);
+                            }
+                        }
                         continue;
                     }
                     if (html.File[i] == '\"')
                     {
                         extractedMessage.Append("1");
-                        while (html.File[++i] != '\"') ;
+                        while (html.File[++i] != '\"')
+                        {
+                            if (FileCrashedByOne(extractedMessage))
+                            {
+                                return RestoreMessage(extractedMessage.ToString(), bitsInOneCharacter);
+                            }
+                        }
                         continue;
                     }
                 }
             }
-            catch(IndexOutOfRangeException e)
+            catch (IndexOutOfRangeException e)
             {
-                return "";
+                throw e.Message;
             }
-  
+
 
             return RestoreMessage(extractedMessage.ToString(), bitsInOneCharacter);
         }
@@ -45,7 +57,7 @@ namespace HTMLSteganographyWinFormV2
             StringBuilder restoredMessage = new StringBuilder();
             int lengthOfEndMarker = 3;
 
-            for (int i = 0; i < extractedMessage.Length; i+=bitsInOneCharacter)
+            for (int i = 0; i < extractedMessage.Length; i += bitsInOneCharacter)
             {
                 try
                 {
@@ -55,7 +67,7 @@ namespace HTMLSteganographyWinFormV2
 
                     restoredMessage.Append(restoredSymbol);
 
-                    if(i >= bitsInOneCharacter * lengthOfEndMarker) //ищем конец сообщения
+                    if (i >= bitsInOneCharacter * lengthOfEndMarker) //ищем конец сообщения
                     {
                         if (IsEndOfMessage(restoredMessage))
                         {
@@ -67,7 +79,7 @@ namespace HTMLSteganographyWinFormV2
                 catch (ArgumentOutOfRangeException)
                 {
                     return restoredMessage.ToString();
-                }               
+                }
             }
             return restoredMessage.ToString();
         }
@@ -85,6 +97,65 @@ namespace HTMLSteganographyWinFormV2
             }
 
             return false;
+        }
+
+        private static bool FileCrashedByOne(StringBuilder message)
+        {
+            bool crashingStatus = false;
+            if (message.Length >= 16)
+            {
+                if (message[message.Length - 1] == '1'
+            && message[message.Length - 2] == '1'
+            && message[message.Length - 3] == '1'
+            && message[message.Length - 4] == '1'
+            && message[message.Length - 5] == '1'
+            && message[message.Length - 6] == '1'
+            && message[message.Length - 7] == '1'
+            && message[message.Length - 8] == '1'
+            && message[message.Length - 9] == '1'
+            && message[message.Length - 10] == '1'
+            && message[message.Length - 11] == '1'
+            && message[message.Length - 12] == '1'
+            && message[message.Length - 13] == '1'
+            && message[message.Length - 14] == '1'
+            && message[message.Length - 15] == '1'
+            && message[message.Length - 16] == '1')
+                {
+                    crashingStatus = true;
+                }
+            }
+
+
+            return crashingStatus;
+        }
+
+        private static bool FileCrashedByZero(StringBuilder message)
+        {
+            bool crashingStatus = false;
+            if (message.Length >= 16)
+            {
+                if (message[message.Length - 1] == '0'
+            && message[message.Length - 2] == '0'
+            && message[message.Length - 3] == '0'
+            && message[message.Length - 4] == '0'
+            && message[message.Length - 5] == '0'
+            && message[message.Length - 6] == '0'
+            && message[message.Length - 7] == '0'
+            && message[message.Length - 8] == '0'
+            && message[message.Length - 9] == '0'
+            && message[message.Length - 10] == '0'
+            && message[message.Length - 11] == '0'
+            && message[message.Length - 12] == '0'
+            && message[message.Length - 13] == '0'
+            && message[message.Length - 14] == '0'
+            && message[message.Length - 15] == '0'
+            && message[message.Length - 16] == '0')
+                {
+                    crashingStatus = true;
+                }
+            }
+
+            return crashingStatus;
         }
     }
 }
