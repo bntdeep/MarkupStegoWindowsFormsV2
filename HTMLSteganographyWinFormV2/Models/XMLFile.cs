@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HTMLSteganographyWinFormV2.Models
 {
-    class HTMLFile
+    class XMLFile
     {
         public StringBuilder File { get; set; }
 

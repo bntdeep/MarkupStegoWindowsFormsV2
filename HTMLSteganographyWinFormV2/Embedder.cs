@@ -11,58 +11,58 @@ namespace HTMLSteganographyWinFormV2
 {
     class Embedder
     {
-        public static void EmbedMessage(HTMLFile html, string embedingMessage, int bitsOfOneCharacter)
+        public static void EmbedMessage(XMLFile xml, string embedingMessage, int bitsOfOneCharacter)
         {
             embedingMessage = embedingMessage + "!@#"; // конец сообщения
             string message = MakeBinaryString(embedingMessage, bitsOfOneCharacter);
 
             int embedCounter = 0;
 
-            for (int i = 0; i < html.File.Length-1 && embedCounter < message.Length; i++)
+            for (int i = 0; i < xml.File.Length-1 && embedCounter < message.Length; i++)
             {
-                if(html.File[i] == '\'')
+                if(xml.File[i] == '\'')
                 {
                     if(message[embedCounter] == '0')
                     {
-                        while (html.File[++i] != '\'');
+                        while (xml.File[++i] != '\'');
                         embedCounter++;
                     }
                     else if (message[embedCounter] == '1')
                     {
-                        html.File[i] = '\"';
+                        xml.File[i] = '\"';
 
-                        while (html.File[++i] != '\'')
+                        while (xml.File[++i] != '\'')
                         {
-                            if (html.File[i] == '\"')
+                            if (xml.File[i] == '\"')
                             {
-                                html.File[i] = '\'';
+                                xml.File[i] = '\'';
                             }
                         }
 
-                        html.File[i] = '\"';
+                        xml.File[i] = '\"';
 
                         embedCounter++;
                     }
                 }
-                else  if (html.File[i] == '\"')
+                else  if (xml.File[i] == '\"')
                 {
                     if (message[embedCounter] == '1')
                     {
-                        while (html.File[++i] != '\"') ;
+                        while (xml.File[++i] != '\"') ;
                         embedCounter++;
                     }
                     else if (message[embedCounter] == '0')
                     {
-                        html.File[i] = '\'';
-                        while (html.File[++i] != '\"')
+                        xml.File[i] = '\'';
+                        while (xml.File[++i] != '\"')
                         {
-                            if(html.File[i] == '\'')
+                            if(xml.File[i] == '\'')
                             {
-                                html.File[i] = '\"';
+                                xml.File[i] = '\"';
                             }                    
                         }
 
-                        html.File[i] = '\'';
+                        xml.File[i] = '\'';
 
                         embedCounter++;
                     }

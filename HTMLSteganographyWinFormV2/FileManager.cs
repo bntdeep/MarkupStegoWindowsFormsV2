@@ -13,17 +13,16 @@ namespace HTMLSteganographyWinFormV2
     {
 
         private static readonly string tempArchiveStorage = "./1.zip";
-        private static readonly string tempArchiveStorageLocation = "./";
         private static readonly string xmlFileContainsMainMarkup = "word/document.xml";
 
-        public static string ReadHTMLFile(string path)
+        public static string ReadXMLFile(string path)
         {
             return File.ReadAllText(path);
         }
 
-        public static void WriteHTMLFile(HTMLFile HTMLFile, string path)
+        public static void WriteXMLFile(XMLFile XMLFile, string path)
         {
-            File.WriteAllText(path, HTMLFile.File.ToString());
+            File.WriteAllText(path, XMLFile.File.ToString());
         }
         
         public static void CopyFileAndChangeExtentionToZip(String file)

@@ -14,11 +14,11 @@ namespace HTMLSteganographyWinFormV2
     public partial class Form1 : Form
     {
 
-        HTMLFile xmlContainer;
+        XMLFile xmlContainer;
         DOCXFile docxContainer;
         string endOfMessageFlag = "!@#";
 
-        HTMLFile HTMLFileWithMessage = new HTMLFile();
+        XMLFile HTMLFileWithMessage = new XMLFile();
         DOCXFile DOCXFileWithMessage = new DOCXFile();
         public Form1()
         {
@@ -41,10 +41,10 @@ namespace HTMLSteganographyWinFormV2
 
                 if (fileExctension == ".xml")
                 {
-                    xmlContainer = new HTMLFile();
+                    xmlContainer = new XMLFile();
 
                     xmlContainer.File = new StringBuilder(
-                                            FileManager.ReadHTMLFile(
+                                            FileManager.ReadXMLFile(
                                                         filePathToContainer));
 
                     containerCapacity.Text = (xmlContainer
@@ -62,7 +62,7 @@ namespace HTMLSteganographyWinFormV2
                         string xmlDocument = FileManager.ReadDocumentFromZipFile("./1.zip");
 
                         docxContainer = new DOCXFile();
-                        docxContainer.document = new HTMLFile();
+                        docxContainer.document = new XMLFile();
                         docxContainer.document.File = new StringBuilder(xmlDocument);
 
                         containerCapacity.Text = (docxContainer.document
@@ -123,7 +123,7 @@ namespace HTMLSteganographyWinFormV2
 
                     if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                     {
-                        FileManager.WriteHTMLFile(xmlContainer, saveFileDialog1.FileName);
+                        FileManager.WriteXMLFile(xmlContainer, saveFileDialog1.FileName);
                         MessageBox.Show("Встраивание завершено");
                     }
                 }
@@ -186,7 +186,7 @@ namespace HTMLSteganographyWinFormV2
                 if (fileExtention == ".xml")
                 {
                     HTMLFileWithMessage.File = new StringBuilder(
-                                        FileManager.ReadHTMLFile(
+                                        FileManager.ReadXMLFile(
                                                     filePathToContainer));
 
                     string extractedMessage = Extracter.ExtractMessage(HTMLFileWithMessage, Convert.ToInt32(bitsInOneSymbolTextBox.Text));
@@ -200,7 +200,7 @@ namespace HTMLSteganographyWinFormV2
                     string xmlDocument = FileManager.ReadDocumentFromZipFile("./1.zip");
 
                     DOCXFileWithMessage = new DOCXFile();
-                    DOCXFileWithMessage.document = new HTMLFile();
+                    DOCXFileWithMessage.document = new XMLFile();
                     DOCXFileWithMessage.document.File = new StringBuilder(xmlDocument);
 
                     string extractedMessage = Extracter.ExtractMessage(DOCXFileWithMessage.document, Convert.ToInt32(bitsInOneSymbolTextBox.Text));

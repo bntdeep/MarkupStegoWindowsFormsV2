@@ -8,6 +8,6 @@ namespace HTMLSteganographyWinFormV2.Models
 {
     class DOCXFile
     {
-        public HTMLFile document { get; set; }
+        public XMLFile document { get; set; }
     }
 }

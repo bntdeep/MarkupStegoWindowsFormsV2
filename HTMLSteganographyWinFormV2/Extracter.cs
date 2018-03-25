@@ -9,18 +9,18 @@ namespace HTMLSteganographyWinFormV2
 {
     class Extracter
     {
-        public static string ExtractMessage(HTMLFile html, int bitsInOneCharacter)
+        public static string ExtractMessage(XMLFile xml, int bitsInOneCharacter)
         {
             StringBuilder extractedMessage = new StringBuilder();
 
             try
             {
-                for (int i = 0; i < html.File.Length - 1; i++)
+                for (int i = 0; i < xml.File.Length - 1; i++)
                 {
-                    if (html.File[i] == '\'')
+                    if (xml.File[i] == '\'')
                     {
                         extractedMessage.Append("0");
-                        while (html.File[++i] != '\'')
+                        while (xml.File[++i] != '\'')
                         {
                             if (FileCrashedByZero(extractedMessage))
                             {
@@ -29,10 +29,10 @@ namespace HTMLSteganographyWinFormV2
                         }
                         continue;
                     }
-                    if (html.File[i] == '\"')
+                    if (xml.File[i] == '\"')
                     {
                         extractedMessage.Append("1");
-                        while (html.File[++i] != '\"')
+                        while (xml.File[++i] != '\"')
                         {
                             if (FileCrashedByOne(extractedMessage))
                             {
