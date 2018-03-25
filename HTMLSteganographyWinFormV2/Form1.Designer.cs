@@ -94,7 +94,7 @@
             this.embedMessageButton.Name = "embedMessageButton";
             this.embedMessageButton.Size = new System.Drawing.Size(100, 23);
             this.embedMessageButton.TabIndex = 5;
-            this.embedMessageButton.Text = "Всторить сообщение";
+            this.embedMessageButton.Text = "Встроить";
             this.embedMessageButton.UseVisualStyleBackColor = true;
             this.embedMessageButton.Click += new System.EventHandler(this.embedMessageButton_Click);
             // 
