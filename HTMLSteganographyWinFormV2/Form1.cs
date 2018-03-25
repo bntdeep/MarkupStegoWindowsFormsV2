@@ -108,6 +108,8 @@ namespace HTMLSteganographyWinFormV2
 
         private void embedMessageButton_Click(object sender, EventArgs e)
         {
+            FileManager.DeleteTempArchive("./1.zip");
+
             if (xmlContainer != null)
             {
                 if (Convert.ToInt32(containerCapacity.Text) >= 0)
@@ -174,6 +176,8 @@ namespace HTMLSteganographyWinFormV2
 
         private void extractMessageFromHTMLButton_Click(object sender, EventArgs e)
         {
+
+
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Markup files (*.html, *.xml, *.docx)|*.html;*.xml;*.docx";
             openFileDialog.Title = "Select a HTML Container";

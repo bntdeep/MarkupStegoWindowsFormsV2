@@ -27,6 +27,7 @@ namespace HTMLSteganographyWinFormV2
         
         public static void CopyFileAndChangeExtentionToZip(String file)
         {
+            DeleteTempArchive(tempArchiveStorage);
             File.Copy(file, Path.ChangeExtension(tempArchiveStorage, ".zip"));
         }
         public static void CopyFileAndChangeExtentionToDOCX(String file, string fileDestination)
