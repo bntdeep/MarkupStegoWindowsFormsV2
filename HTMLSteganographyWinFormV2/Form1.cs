@@ -108,7 +108,6 @@ namespace HTMLSteganographyWinFormV2
 
         private void embedMessageButton_Click(object sender, EventArgs e)
         {
-            //FileManager.DeleteTempArchive("./1.zip");
 
             if (xmlContainer != null)
             {
