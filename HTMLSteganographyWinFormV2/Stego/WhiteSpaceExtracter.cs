@@ -34,14 +34,13 @@ namespace HTMLSteganographyWinFormV2.Stego
                                                 .Key;
                     message.Add(Int32.Parse(symbolsPair[0].ToString()));
                     message.Add(Int32.Parse(symbolsPair[1].ToString()));
-
                 }
                 doc.Close(ref missing, ref missing, ref missing);
             }
             catch (Exception e)
             {
                 doc.Close(ref missing, ref missing, ref missing);
-                throw new Exception("extractMessage Exception, MESSAGE: " + e.Message);
+                throw new Exception("WhiteSpaceExtracter.extractMessage() Exception, MESSAGE: " + e.Message);
             }
             return message;
         }

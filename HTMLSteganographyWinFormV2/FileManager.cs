@@ -13,6 +13,7 @@ namespace HTMLSteganographyWinFormV2
     {
 
         private static readonly string tempArchiveStorage = "./1.zip";
+        private static readonly string tempDOCXDocumentName = "./1.docx";
         private static readonly string xmlFileContainsMainMarkup = "word/document.xml";
 
         public static string ReadXMLFile(string path)
@@ -28,15 +29,37 @@ namespace HTMLSteganographyWinFormV2
         public static void CopyFileAndChangeExtentionToZip(String file)
         {
             DeleteTempArchive(tempArchiveStorage);
-            File.Copy(file, Path.ChangeExtension(tempArchiveStorage, ".zip"));
+            File.Copy(file, "./1.docx");
         }
+
+        public static void CopyFileToTempFolder(String file)
+        {
+            if (File.Exists(tempDOCXDocumentName))
+            {
+                File.Delete(tempDOCXDocumentName);
+            }
+
+            File.Copy(file, tempDOCXDocumentName, true);
+        }
+
         public static void CopyFileAndChangeExtentionToDOCX(String file, string fileDestination)
         {
             File.Copy(file, Path.ChangeExtension(fileDestination, ".docx"),true);
         }
+
+        public static void CopyFile(String file, string fileDestination)
+        {
+            File.Copy(file,fileDestination, true);
+        }
+
         public static void DeleteTempArchive(string tempArchive)
         {
             File.Delete(tempArchive);
+        }
+
+        public static void DeleteTempDOCX()
+        {
+            File.Delete(tempDOCXDocumentName);
         }
 
         public static string ReadDocumentFromZipFile(String filePath)

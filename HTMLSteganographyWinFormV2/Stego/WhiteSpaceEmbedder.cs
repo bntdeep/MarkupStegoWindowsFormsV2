@@ -11,16 +11,14 @@ namespace HTMLSteganographyWinFormV2.Stego
 {
     class WhiteSpaceEmbedder
     {
-        private static void embedMessage(Application word, string _fileName, List<int> embeddingBits, int containerSize)
+        public static void embedMessage(string _fileName, List<int> embeddingBits, int containerSize)
         {
 
             if (containerSize < embeddingBits.Count)
-            {
                 throw new Exception("WhiteSpaceEmbedder.embedMessage() Exception, MESSAGE: container size: " + containerSize + " < message size: " + embeddingBits.Count);
-            }
 
+            Application word = new Application();
             Document doc = new Document();
-
             object missing = Type.Missing;
 
             try
@@ -40,7 +38,6 @@ namespace HTMLSteganographyWinFormV2.Stego
                     charsPair += embeddingBits[currentIteration + 1].ToString();
 
                     word.Selection.Find.Execute(ref space);
-
 
                     switch (CharPairToFontPositionMapper.mapper[charsPair])
                     {
@@ -64,12 +61,47 @@ namespace HTMLSteganographyWinFormV2.Stego
 
                 doc.Save();
                 doc.Close(ref missing, ref missing, ref missing);
+                word.Quit();
             }
             catch (Exception e)
             {
                 doc.Close(ref missing, ref missing, ref missing);
+                word.Quit();
                 throw new Exception("WhiteSpaceEmbedder.embedMessage() Exception, MESSAGE: " + e.Message);
             }
+        }
+
+        public static int countSpaces(string _fileName)
+        {
+
+            Application word = new Application();
+            Document doc = new Document();
+            int spacesCounter = 0;
+            object missing = Type.Missing;
+
+            try
+            {
+                object fileName = _fileName;
+                doc = word.Documents.Open(ref fileName);
+                doc.Activate();
+
+                word.Selection.Start = 0;
+                object space = " ";
+                while (word.Selection.Find.Execute(ref space))
+                {
+                    spacesCounter++;
+                }
+                doc.Close(ref missing, ref missing, ref missing);
+                word.Quit();
+            }
+            catch (Exception e)
+            {
+                doc.Close(ref missing, ref missing, ref missing);
+                word.Quit();
+                throw new Exception("extractMessage Exception, MESSAGE: " + e.Message);
+            }
+
+            return spacesCounter;
         }
     }
 }

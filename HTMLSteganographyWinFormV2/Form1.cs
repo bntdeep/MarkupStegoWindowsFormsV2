@@ -8,6 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HTMLSteganographyWinFormV2.Stego;
+using HTMLSteganographyWinFormV2.Util.Convertor;
+using System.IO;
+using System.Reflection;
 
 namespace HTMLSteganographyWinFormV2
 {
@@ -19,6 +23,11 @@ namespace HTMLSteganographyWinFormV2
 
         XMLFile HTMLFileWithMessage = new XMLFile();
         DOCXFile DOCXFileWithMessage = new DOCXFile();
+
+        static string executableLocation = Path.GetDirectoryName(
+                 Assembly.GetExecutingAssembly().Location);
+        static string documentName = Path.Combine(executableLocation, "1.docx");
+
 
         public Form1()
         {
@@ -41,39 +50,43 @@ namespace HTMLSteganographyWinFormV2
 
                 if (fileExctension == ".xml")
                 {
-                    xmlContainer = new XMLFile();
+                    //xmlContainer = new XMLFile();
 
-                    xmlContainer.File = new StringBuilder(
-                                            FileManager.ReadXMLFile(
-                                                        filePathToContainer));
+                    //xmlContainer.File = new StringBuilder(
+                    //                        FileManager.ReadXMLFile(
+                    //                                    filePathToContainer));
 
-                    containerCapacity.Text = (xmlContainer
-                                    .GetContainerCapacity(Convert.ToInt32(bitsInOneSymbolTextBox.Text))
-                                    - endOfMessageFlag.Length)
-                                    .ToString();
+                    //containerCapacity.Text = (xmlContainer
+                    //                .GetContainerCapacity(Convert.ToInt32(bitsInOneSymbolTextBox.Text))
+                    //                - endOfMessageFlag.Length)
+                    //                .ToString();
 
+                    throw new Exception("unsupported fileExctension variable");
                 }
                 else if (fileExctension == ".docx")
                 {
                     try
                     {
-                        FileManager.CopyFileAndChangeExtentionToZip(openFileDialog.FileName);
-
-                        string xmlDocument = FileManager.ReadDocumentFromZipFile("./1.zip");
-
+                        FileManager.CopyFileToTempFolder(openFileDialog.FileName);
                         docxContainer = new DOCXFile();
                         docxContainer.document = new XMLFile();
-                        docxContainer.document.File = new StringBuilder(xmlDocument);
 
-                        containerCapacity.Text = (docxContainer.document
-                            .GetContainerCapacity(Convert.ToInt32(bitsInOneSymbolTextBox.Text))
-                            - endOfMessageFlag.Length)
-                            .ToString();
+                        docxContainer.WhiteSpacesNubmer = WhiteSpaceEmbedder.countSpaces(openFileDialog.FileName) / 6;
+                        containerCapacity.Text = docxContainer.WhiteSpacesNubmer.ToString();
+
+                        //docxContainer.document.File = new StringBuilder(xmlDocument);
+
+                        //containerCapacity.Text = (docxContainer.document
+                        //    .GetContainerCapacity(Convert.ToInt32(bitsInOneSymbolTextBox.Text))
+                        //    - endOfMessageFlag.Length)
+                        //    .ToString();
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         MessageBox.Show("Ошибка в структуре документа");
-                        FileManager.DeleteTempArchive("./1.zip");
+                        //FileManager.DeleteTempArchive("./1.zip");
+                        FileManager.DeleteTempDOCX();
+                        throw new Exception(ex.Message);
                     }
                 }
                 else
@@ -89,49 +102,51 @@ namespace HTMLSteganographyWinFormV2
         {
             if (docxContainer != null)
             {
-                containerCapacity.Text = (docxContainer.document
-                    .GetContainerCapacity(Convert.ToInt32(bitsInOneSymbolTextBox.Text))
-                    - endOfMessageFlag.Length
-                    - embedMessage.Text.Length)
-                    .ToString();
-
+                //containerCapacity.Text = (docxContainer.document
+                //    .GetContainerCapacity(Convert.ToInt32(bitsInOneSymbolTextBox.Text))
+                //    - endOfMessageFlag.Length
+                //    - embedMessage.Text.Length)
+                //    .ToString();
+                containerCapacity.Text = (docxContainer.WhiteSpacesNubmer - embedMessage.Text.Length).ToString();
             }
             else if (xmlContainer != null)
             {
-                containerCapacity.Text = (xmlContainer
-                    .GetContainerCapacity(Convert.ToInt32(bitsInOneSymbolTextBox.Text))
-                    - endOfMessageFlag.Length
-                    - embedMessage.Text.Length)
-                    .ToString();
+                //containerCapacity.Text = (xmlContainer
+                //    .GetContainerCapacity(Convert.ToInt32(bitsInOneSymbolTextBox.Text))
+                //    - endOfMessageFlag.Length
+                //    - embedMessage.Text.Length)
+                //    .ToString();
+                throw new Exception("unsupported variable: xmlContainer");
             }
         }
 
         private void embedMessageButton_Click(object sender, EventArgs e)
         {
-
             if (xmlContainer != null)
             {
-                if (Convert.ToInt32(containerCapacity.Text) >= 0)
-                {
-                    Embedder.EmbedMessage(xmlContainer, embedMessage.Text,
-                                            Convert.ToInt32(bitsInOneSymbolTextBox.Text));
+                //if (Convert.ToInt32(containerCapacity.Text) >= 0)
+                //{
+                //    Embedder.EmbedMessage(xmlContainer, embedMessage.Text,
+                //                            Convert.ToInt32(bitsInOneSymbolTextBox.Text));
 
-                    SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                //    SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
-                    saveFileDialog1.Filter = "txt files (*.html)|*.html|All files (*.*)|*.*";
-                    saveFileDialog1.FilterIndex = 2;
-                    saveFileDialog1.RestoreDirectory = true;
+                //    saveFileDialog1.Filter = "txt files (*.html)|*.html|All files (*.*)|*.*";
+                //    saveFileDialog1.FilterIndex = 2;
+                //    saveFileDialog1.RestoreDirectory = true;
 
-                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                    {
-                        FileManager.WriteXMLFile(xmlContainer, saveFileDialog1.FileName);
-                        MessageBox.Show("Встраивание завершено");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("В контейнере нет места");
-                }
+                //    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                //    {
+                //        FileManager.WriteXMLFile(xmlContainer, saveFileDialog1.FileName);
+                //        MessageBox.Show("Встраивание завершено");
+                //    }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("В контейнере нет места");
+                //}
+
+                throw new Exception("unsupported variable embedMessageButton_Click");
             }
             else if (docxContainer != null)
             {
@@ -142,11 +157,14 @@ namespace HTMLSteganographyWinFormV2
                         MessageBox.Show("Введите сообщение");
                         return;
                     }
-                    Embedder.EmbedMessage(docxContainer.document, embedMessage.Text,
-                                            Convert.ToInt32(bitsInOneSymbolTextBox.Text));
-                    FileManager.RemoveDocumentFilefromZipArchive("./1.zip", "word/document.xml");
+                    //Embedder.EmbedMessage(docxContainer.document, embedMessage.Text,
+                    //                        Convert.ToInt32(bitsInOneSymbolTextBox.Text));
+                    //FileManager.RemoveDocumentFilefromZipArchive("./1.zip", "word/document.xml");
 
-                    Embedder.AddStegoContainerToArchive("./1.zip", "word/document.xml", docxContainer.document.File.ToString());
+                    //Embedder.AddStegoContainerToArchive("./1.zip", "word/document.xml", docxContainer.document.File.ToString());
+
+                    List<int> binaryListMessage = BinaryConvertor.convertMessageToBinaryListMapper(embedMessage.Text);
+                    WhiteSpaceEmbedder.embedMessage(documentName, binaryListMessage, binaryListMessage.Count);
 
                     SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
@@ -157,17 +175,19 @@ namespace HTMLSteganographyWinFormV2
                     if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                     {
                         //FileManager.WriteHTMLFile(xmlContainer, saveFileDialog1.FileName);
-                        FileManager.CopyFileAndChangeExtentionToDOCX("./1.zip", saveFileDialog1.FileName); //по идее должно катать
-                        FileManager.DeleteTempArchive("./1.zip");
+                        //FileManager.CopyFileAndChangeExtentionToDOCX("./1.zip", saveFileDialog1.FileName); //по идее должно катать
+
+                        //FileManager.DeleteTempArchive("./1.zip");
+                        FileManager.CopyFile("./1.docx", saveFileDialog1.FileName);
                         MessageBox.Show("Встраивание завершено");
                     }
                 }
                 else
                 {
                     MessageBox.Show("В контейнере нет места");
+                    throw new Exception("embeddign error");
                 }
             }
-
 
             docxContainer = null;
             xmlContainer = null;
@@ -175,8 +195,6 @@ namespace HTMLSteganographyWinFormV2
 
         private void extractMessageFromHTMLButton_Click(object sender, EventArgs e)
         {
-
-
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Markup files (*.html, *.xml, *.docx)|*.html;*.xml;*.docx";
             openFileDialog.Title = "Select a HTML Container";

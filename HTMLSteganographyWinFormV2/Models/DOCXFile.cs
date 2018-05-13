@@ -9,5 +9,6 @@ namespace HTMLSteganographyWinFormV2.Models
     class DOCXFile
     {
         public XMLFile document { get; set; }
+        public int WhiteSpacesNubmer { get; set; }
     }
 }
