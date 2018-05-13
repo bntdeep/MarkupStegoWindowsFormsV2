@@ -13,10 +13,11 @@ namespace HTMLSteganographyWinFormV2
     {
         public static void EmbedMessage(XMLFile xml, string embedingMessage, int bitsOfOneCharacter)
         {
-            embedingMessage = embedingMessage + "!@#"; // конец сообщения
             string message = MakeBinaryString(embedingMessage, bitsOfOneCharacter);
 
             int embedCounter = 0;
+
+            message += IntToStringOneSymbolBitsMapper.map[bitsOfOneCharacter];
 
             for (int i = 0; i < xml.File.Length-1 && embedCounter < message.Length; i++)
             {
@@ -73,7 +74,7 @@ namespace HTMLSteganographyWinFormV2
         private static string MakeBinaryString(string charString, int bitsOfOneCharacter)
         {
             StringBuilder binaryString = new StringBuilder();
-           // int bitsInOneSymbol = 8;
+
             foreach (char item in charString)
             {
                 int symbolCode = (int)item;

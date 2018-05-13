@@ -45,3 +45,13 @@ D:\univer\diplom\programms\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\
 D:\univer\diplom\programms\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.csproj.CoreCompileInputs.cache
 D:\univer\diplom\programms\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.exe
 D:\univer\diplom\programms\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.pdb
+C:\Users\Artsiom_Sushchenia\OneDrive - EPAM\univer\colloboration\blinova\bsuir 2018\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\bin\Debug\HTMLSteganographyWinFormV2.exe.config
+C:\Users\Artsiom_Sushchenia\OneDrive - EPAM\univer\colloboration\blinova\bsuir 2018\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\bin\Debug\HTMLSteganographyWinFormV2.exe
+C:\Users\Artsiom_Sushchenia\OneDrive - EPAM\univer\colloboration\blinova\bsuir 2018\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\bin\Debug\HTMLSteganographyWinFormV2.pdb
+C:\Users\Artsiom_Sushchenia\OneDrive - EPAM\univer\colloboration\blinova\bsuir 2018\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.csprojResolveAssemblyReference.cache
+C:\Users\Artsiom_Sushchenia\OneDrive - EPAM\univer\colloboration\blinova\bsuir 2018\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.Form1.resources
+C:\Users\Artsiom_Sushchenia\OneDrive - EPAM\univer\colloboration\blinova\bsuir 2018\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.Properties.Resources.resources
+C:\Users\Artsiom_Sushchenia\OneDrive - EPAM\univer\colloboration\blinova\bsuir 2018\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.csproj.GenerateResource.Cache
+C:\Users\Artsiom_Sushchenia\OneDrive - EPAM\univer\colloboration\blinova\bsuir 2018\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.csproj.CoreCompileInputs.cache
+C:\Users\Artsiom_Sushchenia\OneDrive - EPAM\univer\colloboration\blinova\bsuir 2018\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.exe
+C:\Users\Artsiom_Sushchenia\OneDrive - EPAM\univer\colloboration\blinova\bsuir 2018\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.pdb

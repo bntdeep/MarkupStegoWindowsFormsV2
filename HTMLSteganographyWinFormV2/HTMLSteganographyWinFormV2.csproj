@@ -56,6 +56,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="IntToStringOneSymbolBitsMapper.cs" />
     <Compile Include="Models\DOCXFile.cs" />
     <Compile Include="Models\XMLFile.cs" />
     <Compile Include="Program.cs" />
