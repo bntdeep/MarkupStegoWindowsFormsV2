@@ -13,13 +13,13 @@ namespace HTMLSteganographyWinFormV2
 {
     public partial class Form1 : Form
     {
-
         XMLFile xmlContainer;
         DOCXFile docxContainer;
         string endOfMessageFlag = "!@#";
 
         XMLFile HTMLFileWithMessage = new XMLFile();
         DOCXFile DOCXFileWithMessage = new DOCXFile();
+
         public Form1()
         {
             InitializeComponent();
@@ -28,10 +28,10 @@ namespace HTMLSteganographyWinFormV2
         private void openHTMLFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            //openFileDialog.Filter = "Markup files (*.jsp, *.html, *.xml, *.zip)|*.jsp;*.html;*.xml;*.zip";
+
             openFileDialog.Title = "Select a Container";
 
-            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 int indexOfPoint = openFileDialog.FileName.IndexOf('.');
 
