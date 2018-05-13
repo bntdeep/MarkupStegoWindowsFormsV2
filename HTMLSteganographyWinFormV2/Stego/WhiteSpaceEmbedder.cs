@@ -16,7 +16,7 @@ namespace HTMLSteganographyWinFormV2.Stego
 
             if (containerSize < embeddingBits.Count)
             {
-                throw new Exception("embedMessage Exception, MESSAGE: container size: " + containerSize + " < message size: " + embeddingBits.Count);
+                throw new Exception("WhiteSpaceEmbedder.embedMessage() Exception, MESSAGE: container size: " + containerSize + " < message size: " + embeddingBits.Count);
             }
 
             Document doc = new Document();
@@ -68,7 +68,7 @@ namespace HTMLSteganographyWinFormV2.Stego
             catch (Exception e)
             {
                 doc.Close(ref missing, ref missing, ref missing);
-                throw new Exception("extractMessage Exception, MESSAGE: " + e.Message);
+                throw new Exception("WhiteSpaceEmbedder.embedMessage() Exception, MESSAGE: " + e.Message);
             }
         }
     }

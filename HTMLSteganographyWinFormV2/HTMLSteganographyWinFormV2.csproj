@@ -67,6 +67,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stego\WhiteSpaceEmbedder.cs" />
+    <Compile Include="Stego\WhiteSpaceExtracter.cs" />
     <Compile Include="Util\Convertor\BinaryConvertor.cs" />
     <Compile Include="Util\Mapper\CharPairToFontPositionMapper.cs" />
     <Compile Include="Util\Mapper\CharToBinaryMapper.cs" />
