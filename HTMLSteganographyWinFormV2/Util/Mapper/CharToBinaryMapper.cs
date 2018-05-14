@@ -38,6 +38,8 @@ namespace HTMLSteganographyWinFormV2.Util.Mapper
                 { 'z', "011010" },
 
                 { ' ', "011011" },
+                { '.', "011100" },
+                { ',', "011101" },
             };
     }
 }

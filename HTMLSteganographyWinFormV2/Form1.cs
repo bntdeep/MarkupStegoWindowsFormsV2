@@ -163,6 +163,8 @@ namespace HTMLSteganographyWinFormV2
 
                     //Embedder.AddStegoContainerToArchive("./1.zip", "word/document.xml", docxContainer.document.File.ToString());
 
+                    //прямо здесь проверить наличие места!!!!!!!!!!!
+
                     List<int> binaryListMessage = BinaryConvertor.convertMessageToBinaryListMapper(embedMessage.Text);
                     WhiteSpaceEmbedder.embedMessage(documentName, binaryListMessage, binaryListMessage.Count);
 
@@ -206,28 +208,33 @@ namespace HTMLSteganographyWinFormV2
 
                 if (fileExtention == ".xml")
                 {
-                    HTMLFileWithMessage.File = new StringBuilder(
-                                        FileManager.ReadXMLFile(
-                                                    filePathToContainer));
+                    //HTMLFileWithMessage.File = new StringBuilder(
+                    //                    FileManager.ReadXMLFile(
+                    //                                filePathToContainer));
 
-                    string extractedMessage = Extracter.ExtractMessage(HTMLFileWithMessage, Convert.ToInt32(bitsInOneSymbolTextBox.Text));
-                    openedContainerLabel.Text = filePathToContainer;
-                    extractedMessaageTextBox.Text = extractedMessage;
+                    //string extractedMessage = Extracter.ExtractMessage(HTMLFileWithMessage, Convert.ToInt32(bitsInOneSymbolTextBox.Text));
+                    //openedContainerLabel.Text = filePathToContainer;
+                    //extractedMessaageTextBox.Text = extractedMessage;
+                    throw new Exception("unsupported .xml cocument in method: extractMessageFromHTMLButton_Click");
                 }
                 else if (fileExtention == ".docx")
                 {
-                    FileManager.CopyFileAndChangeExtentionToZip(openFileDialog.FileName);
+                    //FileManager.CopyFileAndChangeExtentionToZip(openFileDialog.FileName);
 
-                    string xmlDocument = FileManager.ReadDocumentFromZipFile("./1.zip");
+                    //string xmlDocument = FileManager.ReadDocumentFromZipFile("./1.zip");
 
-                    DOCXFileWithMessage = new DOCXFile();
-                    DOCXFileWithMessage.document = new XMLFile();
-                    DOCXFileWithMessage.document.File = new StringBuilder(xmlDocument);
+                    //DOCXFileWithMessage = new DOCXFile();
+                    //DOCXFileWithMessage.document = new XMLFile();
+                    //DOCXFileWithMessage.document.File = new StringBuilder(xmlDocument);
 
-                    string extractedMessage = Extracter.ExtractMessage(DOCXFileWithMessage.document, Convert.ToInt32(bitsInOneSymbolTextBox.Text));
-                    openedContainerLabel.Text = filePathToContainer;
+                    //string extractedMessage = Extracter.ExtractMessage(DOCXFileWithMessage.document, Convert.ToInt32(bitsInOneSymbolTextBox.Text));
+                    //openedContainerLabel.Text = filePathToContainer;
+                    //extractedMessaageTextBox.Text = extractedMessage;
+                    //FileManager.DeleteTempArchive("./1.zip");
+
+                    var extractedList = WhiteSpaceExtracter.extractMessage(openFileDialog.FileName);
+                    string extractedMessage = BinaryConvertor.convertBinaryListToStringMapper(extractedList);
                     extractedMessaageTextBox.Text = extractedMessage;
-                    FileManager.DeleteTempArchive("./1.zip");
                 }
 
 

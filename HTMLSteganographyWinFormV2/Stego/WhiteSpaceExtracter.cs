@@ -10,8 +10,9 @@ namespace HTMLSteganographyWinFormV2.Stego
 {
     class WhiteSpaceExtracter
     {
-        public static List<int> extractMessage(Application word, string _fileName)
+        public static List<int> extractMessage(string _fileName)
         {
+            Application word = new Application();
             Document doc = new Document();
             List<int> message = new List<int>();
 
@@ -36,10 +37,12 @@ namespace HTMLSteganographyWinFormV2.Stego
                     message.Add(Int32.Parse(symbolsPair[1].ToString()));
                 }
                 doc.Close(ref missing, ref missing, ref missing);
+                word.Quit();
             }
             catch (Exception e)
             {
                 doc.Close(ref missing, ref missing, ref missing);
+                word.Quit();
                 throw new Exception("WhiteSpaceExtracter.extractMessage() Exception, MESSAGE: " + e.Message);
             }
             return message;
