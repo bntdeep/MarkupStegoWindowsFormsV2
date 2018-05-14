@@ -35,6 +35,15 @@ namespace HTMLSteganographyWinFormV2.Stego
                                                 .Key;
                     message.Add(Int32.Parse(symbolsPair[0].ToString()));
                     message.Add(Int32.Parse(symbolsPair[1].ToString()));
+
+                    if (message.Count > 7)
+                    {
+                        var endOfMessageList = new List<int>(new int[] { 0, 0, 0, 0, 0, 0 });
+                        var lastCharacter = message.GetRange(message.Count - 7, 6);
+                        if (lastCharacter.SequenceEqual(endOfMessageList))
+                            break;
+                    }
+
                 }
                 doc.Close(ref missing, ref missing, ref missing);
                 word.Quit();
