@@ -5,12 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Office.Interop.Word;
 using HTMLSteganographyWinFormV2.Util.Mapper;
-
+using System.IO;
+using System.Reflection;
 
 namespace HTMLSteganographyWinFormV2.Stego
 {
     class WhiteSpaceEmbedder
     {
+        static string executableLocation = Path.GetDirectoryName(
+         Assembly.GetExecutingAssembly().Location);
+        static string documentName = Path.Combine(executableLocation, "1.docx");
+
         public static void embedMessage(string _fileName, List<int> embeddingBits, int containerSize)
         {
 
@@ -62,6 +67,7 @@ namespace HTMLSteganographyWinFormV2.Stego
                 doc.Save();
                 doc.Close(ref missing, ref missing, ref missing);
                 word.Quit();
+                
             }
             catch (Exception e)
             {

@@ -69,6 +69,7 @@
     <Compile Include="Stego\WhiteSpaceEmbedder.cs" />
     <Compile Include="Stego\WhiteSpaceExtracter.cs" />
     <Compile Include="Util\Convertor\BinaryConvertor.cs" />
+    <Compile Include="Util\Crypto\MD5Hasher.cs" />
     <Compile Include="Util\Mapper\CharPairToFontPositionMapper.cs" />
     <Compile Include="Util\Mapper\CharToBinaryMapper.cs" />
     <EmbeddedResource Include="Form1.resx">

@@ -36,11 +36,10 @@
             this.embedMessageButton = new System.Windows.Forms.Button();
             this.extractMessageFromHTMLButton = new System.Windows.Forms.Button();
             this.extractedMessaageTextBox = new System.Windows.Forms.TextBox();
-            this.bitsInOneCharacter = new System.Windows.Forms.Label();
             this.ContainerLabel = new System.Windows.Forms.Label();
             this.openedContainerLabel = new System.Windows.Forms.Label();
-            this.bitsInOneSymbolTextBox = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.bitsInOneSymbolTextBox)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.messageHashTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // openHTMLFile
@@ -115,15 +114,6 @@
             this.extractedMessaageTextBox.Size = new System.Drawing.Size(312, 20);
             this.extractedMessaageTextBox.TabIndex = 7;
             // 
-            // bitsInOneCharacter
-            // 
-            this.bitsInOneCharacter.AutoSize = true;
-            this.bitsInOneCharacter.Location = new System.Drawing.Point(12, 57);
-            this.bitsInOneCharacter.Name = "bitsInOneCharacter";
-            this.bitsInOneCharacter.Size = new System.Drawing.Size(120, 13);
-            this.bitsInOneCharacter.TabIndex = 8;
-            this.bitsInOneCharacter.Text = "Кол-во бит на символ:";
-            // 
             // ContainerLabel
             // 
             this.ContainerLabel.AutoSize = true;
@@ -142,27 +132,31 @@
             this.openedContainerLabel.TabIndex = 11;
             this.openedContainerLabel.Text = "Empty";
             // 
-            // bitsInOneSymbolTextBox
+            // label1
             // 
-            this.bitsInOneSymbolTextBox.Location = new System.Drawing.Point(162, 55);
-            this.bitsInOneSymbolTextBox.Name = "bitsInOneSymbolTextBox";
-            this.bitsInOneSymbolTextBox.Size = new System.Drawing.Size(120, 20);
-            this.bitsInOneSymbolTextBox.TabIndex = 12;
-            this.bitsInOneSymbolTextBox.Value = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Хэш сообщения:";
+            // 
+            // messageHashTextBox
+            // 
+            this.messageHashTextBox.Location = new System.Drawing.Point(109, 55);
+            this.messageHashTextBox.Name = "messageHashTextBox";
+            this.messageHashTextBox.Size = new System.Drawing.Size(215, 20);
+            this.messageHashTextBox.TabIndex = 13;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(336, 289);
-            this.Controls.Add(this.bitsInOneSymbolTextBox);
+            this.Controls.Add(this.messageHashTextBox);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.openedContainerLabel);
             this.Controls.Add(this.ContainerLabel);
-            this.Controls.Add(this.bitsInOneCharacter);
             this.Controls.Add(this.extractedMessaageTextBox);
             this.Controls.Add(this.extractMessageFromHTMLButton);
             this.Controls.Add(this.embedMessageButton);
@@ -174,7 +168,6 @@
             this.Name = "Form1";
             this.Text = "MarkupStego";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.bitsInOneSymbolTextBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,10 +183,10 @@
         private System.Windows.Forms.Button embedMessageButton;
         private System.Windows.Forms.Button extractMessageFromHTMLButton;
         private System.Windows.Forms.TextBox extractedMessaageTextBox;
-        private System.Windows.Forms.Label bitsInOneCharacter;
         private System.Windows.Forms.Label ContainerLabel;
         private System.Windows.Forms.Label openedContainerLabel;
-        private System.Windows.Forms.NumericUpDown bitsInOneSymbolTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox messageHashTextBox;
     }
 }
 

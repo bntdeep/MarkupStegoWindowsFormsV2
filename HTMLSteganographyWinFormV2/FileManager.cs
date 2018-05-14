@@ -29,7 +29,7 @@ namespace HTMLSteganographyWinFormV2
         public static void CopyFileAndChangeExtentionToZip(String file)
         {
             DeleteTempArchive(tempArchiveStorage);
-            File.Copy(file, "./1.docx");
+            File.Copy(file, Path.ChangeExtension(file, ".docx"), true);
         }
 
         public static void CopyFileToTempFolder(String file)

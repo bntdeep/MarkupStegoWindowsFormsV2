@@ -12,6 +12,8 @@ using HTMLSteganographyWinFormV2.Stego;
 using HTMLSteganographyWinFormV2.Util.Convertor;
 using System.IO;
 using System.Reflection;
+using HTMLSteganographyWinFormV2.Util.Crypto;
+using System.Threading;
 
 namespace HTMLSteganographyWinFormV2
 {
@@ -75,11 +77,6 @@ namespace HTMLSteganographyWinFormV2
                         containerCapacity.Text = docxContainer.WhiteSpacesNubmer.ToString();
 
                         //docxContainer.document.File = new StringBuilder(xmlDocument);
-
-                        //containerCapacity.Text = (docxContainer.document
-                        //    .GetContainerCapacity(Convert.ToInt32(bitsInOneSymbolTextBox.Text))
-                        //    - endOfMessageFlag.Length)
-                        //    .ToString();
                     }
                     catch (Exception ex)
                     {
@@ -100,24 +97,27 @@ namespace HTMLSteganographyWinFormV2
 
         private void embedMessage_TextChanged(object sender, EventArgs e)
         {
-            if (docxContainer != null)
-            {
-                //containerCapacity.Text = (docxContainer.document
-                //    .GetContainerCapacity(Convert.ToInt32(bitsInOneSymbolTextBox.Text))
-                //    - endOfMessageFlag.Length
-                //    - embedMessage.Text.Length)
-                //    .ToString();
-                containerCapacity.Text = (docxContainer.WhiteSpacesNubmer - embedMessage.Text.Length).ToString();
-            }
-            else if (xmlContainer != null)
-            {
-                //containerCapacity.Text = (xmlContainer
-                //    .GetContainerCapacity(Convert.ToInt32(bitsInOneSymbolTextBox.Text))
-                //    - endOfMessageFlag.Length
-                //    - embedMessage.Text.Length)
-                //    .ToString();
-                throw new Exception("unsupported variable: xmlContainer");
-            }
+            //if (docxContainer != null)
+            //{
+            //    //containerCapacity.Text = (docxContainer.document
+            //    //    .GetContainerCapacity(Convert.ToInt32(bitsInOneSymbolTextBox.Text))
+            //    //    - endOfMessageFlag.Length
+            //    //    - embedMessage.Text.Length)
+            //    //    .ToString();
+            //    containerCapacity.Text = (docxContainer.WhiteSpacesNubmer - embedMessage.Text.Length).ToString();
+            //}
+            //else if (xmlContainer != null)
+            //{
+            //    //containerCapacity.Text = (xmlContainer
+            //    //    .GetContainerCapacity(Convert.ToInt32(bitsInOneSymbolTextBox.Text))
+            //    //    - endOfMessageFlag.Length
+            //    //    - embedMessage.Text.Length)
+            //    //    .ToString();
+            //    throw new Exception("unsupported variable: xmlContainer");
+            //}
+            containerCapacity.Text = (docxContainer.WhiteSpacesNubmer - embedMessage.Text.Length).ToString();
+            messageHashTextBox.Text = MD5Hasher.CalculateMD5Hash(embedMessage.Text);
+          
         }
 
         private void embedMessageButton_Click(object sender, EventArgs e)
@@ -157,16 +157,22 @@ namespace HTMLSteganographyWinFormV2
                         MessageBox.Show("Введите сообщение");
                         return;
                     }
+
+
+                    List<int> binaryListMessage = BinaryConvertor.convertMessageToBinaryListMapper(embedMessage.Text);
+                    WhiteSpaceEmbedder.embedMessage(documentName, binaryListMessage, binaryListMessage.Count);
+                    //Thread.Sleep(100);
+                    //FileManager.CopyFileAndChangeExtentionToZip(documentName);
+
                     //Embedder.EmbedMessage(docxContainer.document, embedMessage.Text,
                     //                        Convert.ToInt32(bitsInOneSymbolTextBox.Text));
                     //FileManager.RemoveDocumentFilefromZipArchive("./1.zip", "word/document.xml");
 
                     //Embedder.AddStegoContainerToArchive("./1.zip", "word/document.xml", docxContainer.document.File.ToString());
 
-                    //прямо здесь проверить наличие места!!!!!!!!!!!
 
-                    List<int> binaryListMessage = BinaryConvertor.convertMessageToBinaryListMapper(embedMessage.Text);
-                    WhiteSpaceEmbedder.embedMessage(documentName, binaryListMessage, binaryListMessage.Count);
+                    //worked path
+
 
                     SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
@@ -182,17 +188,18 @@ namespace HTMLSteganographyWinFormV2
                         //FileManager.DeleteTempArchive("./1.zip");
                         FileManager.CopyFile("./1.docx", saveFileDialog1.FileName);
                         MessageBox.Show("Встраивание завершено");
+                        docxContainer = null;
+                        xmlContainer = null;
                     }
+
                 }
                 else
                 {
                     MessageBox.Show("В контейнере нет места");
-                    throw new Exception("embeddign error");
+                    //throw new Exception("embeddign error");
                 }
             }
 
-            docxContainer = null;
-            xmlContainer = null;
         }
 
         private void extractMessageFromHTMLButton_Click(object sender, EventArgs e)
@@ -236,8 +243,6 @@ namespace HTMLSteganographyWinFormV2
                     string extractedMessage = BinaryConvertor.convertBinaryListToStringMapper(extractedList);
                     extractedMessaageTextBox.Text = extractedMessage;
                 }
-
-
             }
         }
 
