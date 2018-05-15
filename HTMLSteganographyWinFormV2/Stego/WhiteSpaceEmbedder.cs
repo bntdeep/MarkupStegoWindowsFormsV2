@@ -67,7 +67,8 @@ namespace HTMLSteganographyWinFormV2.Stego
                 doc.Save();
                 doc.Close(ref missing, ref missing, ref missing);
                 word.Quit();
-                
+
+                //FileManager.CopyFileAndChangeExtentionToZip(documentName);
             }
             catch (Exception e)
             {

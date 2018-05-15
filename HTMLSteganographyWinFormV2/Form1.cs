@@ -186,10 +186,11 @@ namespace HTMLSteganographyWinFormV2
                         //FileManager.CopyFileAndChangeExtentionToDOCX("./1.zip", saveFileDialog1.FileName); //по идее должно катать
 
                         //FileManager.DeleteTempArchive("./1.zip");
-                        FileManager.CopyFile("./1.docx", saveFileDialog1.FileName);
-                        MessageBox.Show("Встраивание завершено");
-                        docxContainer = null;
-                        xmlContainer = null;
+
+                        //FileManager.CopyFile("./1.docx", saveFileDialog1.FileName);
+                        //MessageBox.Show("Встраивание завершено");
+                        //docxContainer = null;
+                        //xmlContainer = null;
                     }
 
                 }
