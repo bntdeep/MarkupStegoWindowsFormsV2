@@ -71,7 +71,7 @@ namespace HTMLSteganographyWinFormV2
             }
         }
 
-        private static string MakeBinaryString(string charString, int bitsOfOneCharacter)
+        public static string MakeBinaryString(string charString, int bitsOfOneCharacter)
         {
             StringBuilder binaryString = new StringBuilder();
 

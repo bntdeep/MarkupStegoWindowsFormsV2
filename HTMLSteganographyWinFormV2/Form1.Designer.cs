@@ -40,23 +40,27 @@
             this.ContainerLabel = new System.Windows.Forms.Label();
             this.openedContainerLabel = new System.Windows.Forms.Label();
             this.bitsInOneSymbolTextBox = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numberOfUsedQuates = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bitsInOneSymbolTextBox)).BeginInit();
             this.SuspendLayout();
             // 
             // openHTMLFile
             // 
-            this.openHTMLFile.Location = new System.Drawing.Point(15, 121);
+            this.openHTMLFile.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.openHTMLFile.Location = new System.Drawing.Point(12, 12);
             this.openHTMLFile.Name = "openHTMLFile";
-            this.openHTMLFile.Size = new System.Drawing.Size(203, 23);
+            this.openHTMLFile.Size = new System.Drawing.Size(309, 34);
             this.openHTMLFile.TabIndex = 0;
-            this.openHTMLFile.Text = "Открыть файл";
-            this.openHTMLFile.UseVisualStyleBackColor = true;
+            this.openHTMLFile.Text = "Выбрать контейнер";
+            this.openHTMLFile.UseVisualStyleBackColor = false;
             this.openHTMLFile.Click += new System.EventHandler(this.openHTMLFile_Click);
             // 
             // containerCapacityLabelReadOnly
             // 
             this.containerCapacityLabelReadOnly.AutoSize = true;
-            this.containerCapacityLabelReadOnly.Location = new System.Drawing.Point(12, 33);
+            this.containerCapacityLabelReadOnly.Location = new System.Drawing.Point(9, 73);
             this.containerCapacityLabelReadOnly.Name = "containerCapacityLabelReadOnly";
             this.containerCapacityLabelReadOnly.Size = new System.Drawing.Size(111, 13);
             this.containerCapacityLabelReadOnly.TabIndex = 1;
@@ -65,7 +69,7 @@
             // containerCapacity
             // 
             this.containerCapacity.AutoSize = true;
-            this.containerCapacity.Location = new System.Drawing.Point(159, 33);
+            this.containerCapacity.Location = new System.Drawing.Point(156, 73);
             this.containerCapacity.Name = "containerCapacity";
             this.containerCapacity.Size = new System.Drawing.Size(13, 13);
             this.containerCapacity.TabIndex = 2;
@@ -74,7 +78,7 @@
             // embeddingMessageLabelReadOnly
             // 
             this.embeddingMessageLabelReadOnly.AutoSize = true;
-            this.embeddingMessageLabelReadOnly.Location = new System.Drawing.Point(12, 86);
+            this.embeddingMessageLabelReadOnly.Location = new System.Drawing.Point(9, 126);
             this.embeddingMessageLabelReadOnly.Name = "embeddingMessageLabelReadOnly";
             this.embeddingMessageLabelReadOnly.Size = new System.Drawing.Size(144, 13);
             this.embeddingMessageLabelReadOnly.TabIndex = 3;
@@ -82,7 +86,7 @@
             // 
             // embedMessage
             // 
-            this.embedMessage.Location = new System.Drawing.Point(162, 83);
+            this.embedMessage.Location = new System.Drawing.Point(159, 123);
             this.embedMessage.Name = "embedMessage";
             this.embedMessage.Size = new System.Drawing.Size(162, 20);
             this.embedMessage.TabIndex = 4;
@@ -90,35 +94,37 @@
             // 
             // embedMessageButton
             // 
-            this.embedMessageButton.Location = new System.Drawing.Point(224, 121);
+            this.embedMessageButton.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.embedMessageButton.Location = new System.Drawing.Point(99, 158);
             this.embedMessageButton.Name = "embedMessageButton";
-            this.embedMessageButton.Size = new System.Drawing.Size(100, 23);
+            this.embedMessageButton.Size = new System.Drawing.Size(137, 30);
             this.embedMessageButton.TabIndex = 5;
-            this.embedMessageButton.Text = "Встроить";
-            this.embedMessageButton.UseVisualStyleBackColor = true;
+            this.embedMessageButton.Text = "Осадить";
+            this.embedMessageButton.UseVisualStyleBackColor = false;
             this.embedMessageButton.Click += new System.EventHandler(this.embedMessageButton_Click);
             // 
             // extractMessageFromHTMLButton
             // 
-            this.extractMessageFromHTMLButton.Location = new System.Drawing.Point(12, 183);
+            this.extractMessageFromHTMLButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.extractMessageFromHTMLButton.Location = new System.Drawing.Point(12, 230);
             this.extractMessageFromHTMLButton.Name = "extractMessageFromHTMLButton";
-            this.extractMessageFromHTMLButton.Size = new System.Drawing.Size(312, 23);
+            this.extractMessageFromHTMLButton.Size = new System.Drawing.Size(312, 30);
             this.extractMessageFromHTMLButton.TabIndex = 6;
             this.extractMessageFromHTMLButton.Text = "Извлечь сообщение";
-            this.extractMessageFromHTMLButton.UseVisualStyleBackColor = true;
+            this.extractMessageFromHTMLButton.UseVisualStyleBackColor = false;
             this.extractMessageFromHTMLButton.Click += new System.EventHandler(this.extractMessageFromHTMLButton_Click);
             // 
             // extractedMessaageTextBox
             // 
-            this.extractedMessaageTextBox.Location = new System.Drawing.Point(12, 212);
+            this.extractedMessaageTextBox.Location = new System.Drawing.Point(156, 277);
             this.extractedMessaageTextBox.Name = "extractedMessaageTextBox";
-            this.extractedMessaageTextBox.Size = new System.Drawing.Size(312, 20);
+            this.extractedMessaageTextBox.Size = new System.Drawing.Size(168, 20);
             this.extractedMessaageTextBox.TabIndex = 7;
             // 
             // bitsInOneCharacter
             // 
             this.bitsInOneCharacter.AutoSize = true;
-            this.bitsInOneCharacter.Location = new System.Drawing.Point(12, 57);
+            this.bitsInOneCharacter.Location = new System.Drawing.Point(9, 97);
             this.bitsInOneCharacter.Name = "bitsInOneCharacter";
             this.bitsInOneCharacter.Size = new System.Drawing.Size(120, 13);
             this.bitsInOneCharacter.TabIndex = 8;
@@ -127,26 +133,25 @@
             // ContainerLabel
             // 
             this.ContainerLabel.AutoSize = true;
-            this.ContainerLabel.Location = new System.Drawing.Point(12, 9);
+            this.ContainerLabel.Location = new System.Drawing.Point(9, 49);
             this.ContainerLabel.Name = "ContainerLabel";
-            this.ContainerLabel.Size = new System.Drawing.Size(64, 13);
+            this.ContainerLabel.Size = new System.Drawing.Size(119, 13);
             this.ContainerLabel.TabIndex = 10;
-            this.ContainerLabel.Text = "Контейнер:";
+            this.ContainerLabel.Text = "Название контейнера";
             // 
             // openedContainerLabel
             // 
             this.openedContainerLabel.AutoSize = true;
-            this.openedContainerLabel.Location = new System.Drawing.Point(82, 9);
+            this.openedContainerLabel.Location = new System.Drawing.Point(129, 49);
             this.openedContainerLabel.Name = "openedContainerLabel";
-            this.openedContainerLabel.Size = new System.Drawing.Size(36, 13);
+            this.openedContainerLabel.Size = new System.Drawing.Size(0, 13);
             this.openedContainerLabel.TabIndex = 11;
-            this.openedContainerLabel.Text = "Empty";
             // 
             // bitsInOneSymbolTextBox
             // 
-            this.bitsInOneSymbolTextBox.Location = new System.Drawing.Point(162, 55);
+            this.bitsInOneSymbolTextBox.Location = new System.Drawing.Point(159, 95);
             this.bitsInOneSymbolTextBox.Name = "bitsInOneSymbolTextBox";
-            this.bitsInOneSymbolTextBox.Size = new System.Drawing.Size(120, 20);
+            this.bitsInOneSymbolTextBox.Size = new System.Drawing.Size(162, 20);
             this.bitsInOneSymbolTextBox.TabIndex = 12;
             this.bitsInOneSymbolTextBox.Value = new decimal(new int[] {
             8,
@@ -154,11 +159,40 @@
             0,
             0});
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 204);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(203, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Количество использованных кавычек:";
+            // 
+            // numberOfUsedQuates
+            // 
+            this.numberOfUsedQuates.AutoSize = true;
+            this.numberOfUsedQuates.Location = new System.Drawing.Point(221, 204);
+            this.numberOfUsedQuates.Name = "numberOfUsedQuates";
+            this.numberOfUsedQuates.Size = new System.Drawing.Size(0, 13);
+            this.numberOfUsedQuates.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 280);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Извлеченное сообщение:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(336, 289);
+            this.ClientSize = new System.Drawing.Size(346, 331);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.numberOfUsedQuates);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.bitsInOneSymbolTextBox);
             this.Controls.Add(this.openedContainerLabel);
             this.Controls.Add(this.ContainerLabel);
@@ -172,7 +206,7 @@
             this.Controls.Add(this.containerCapacityLabelReadOnly);
             this.Controls.Add(this.openHTMLFile);
             this.Name = "Form1";
-            this.Text = "MarkupStego";
+            this.Text = "QuatesEmbed";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.bitsInOneSymbolTextBox)).EndInit();
             this.ResumeLayout(false);
@@ -194,6 +228,9 @@
         private System.Windows.Forms.Label ContainerLabel;
         private System.Windows.Forms.Label openedContainerLabel;
         private System.Windows.Forms.NumericUpDown bitsInOneSymbolTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label numberOfUsedQuates;
+        private System.Windows.Forms.Label label2;
     }
 }
 

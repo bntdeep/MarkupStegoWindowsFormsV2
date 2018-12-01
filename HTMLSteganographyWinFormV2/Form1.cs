@@ -1,25 +1,17 @@
 ﻿using HTMLSteganographyWinFormV2.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HTMLSteganographyWinFormV2
 {
     public partial class Form1 : Form
     {
-
-        XMLFile xmlContainer;
-        DOCXFile docxContainer;
-        string endOfMessageFlag = "!@#";
-
-        XMLFile HTMLFileWithMessage = new XMLFile();
-        DOCXFile DOCXFileWithMessage = new DOCXFile();
+        private XMLFile xmlContainer;
+        private DOCXFile docxContainer;
+        private string endOfMessageFlag = "!@#";
+        private XMLFile HTMLFileWithMessage = new XMLFile();
+        private DOCXFile DOCXFileWithMessage = new DOCXFile();
         public Form1()
         {
             InitializeComponent();
@@ -122,6 +114,7 @@ namespace HTMLSteganographyWinFormV2
                     saveFileDialog1.FilterIndex = 2;
                     saveFileDialog1.RestoreDirectory = true;
 
+
                     if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                     {
                         FileManager.WriteXMLFile(xmlContainer, saveFileDialog1.FileName);
@@ -137,7 +130,7 @@ namespace HTMLSteganographyWinFormV2
             {
                 if (Convert.ToInt32(containerCapacity.Text) >= 0)
                 {
-                    if(embedMessage.Text.Length == 0)
+                    if (embedMessage.Text.Length == 0)
                     {
                         MessageBox.Show("Введите сообщение");
                         return;
@@ -153,6 +146,8 @@ namespace HTMLSteganographyWinFormV2
                     saveFileDialog1.Filter = "txt files (*.html)|*.html|All files (*.*)|*.*";
                     saveFileDialog1.FilterIndex = 2;
                     saveFileDialog1.RestoreDirectory = true;
+
+                    numberOfUsedQuates.Text = Embedder.MakeBinaryString(embedMessage.Text, Convert.ToInt32(bitsInOneSymbolTextBox.Text)).Length.ToString();
 
                     if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                     {

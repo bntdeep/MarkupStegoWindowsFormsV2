@@ -55,3 +55,13 @@ C:\Users\Artsiom_Sushchenia\OneDrive - EPAM\univer\colloboration\blinova\bsuir 2
 C:\Users\Artsiom_Sushchenia\OneDrive - EPAM\univer\colloboration\blinova\bsuir 2018\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.csproj.CoreCompileInputs.cache
 C:\Users\Artsiom_Sushchenia\OneDrive - EPAM\univer\colloboration\blinova\bsuir 2018\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.exe
 C:\Users\Artsiom_Sushchenia\OneDrive - EPAM\univer\colloboration\blinova\bsuir 2018\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.pdb
+C:\Users\Artsiom_Sushchenia\Desktop\urbn test\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\bin\Debug\HTMLSteganographyWinFormV2.exe.config
+C:\Users\Artsiom_Sushchenia\Desktop\urbn test\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\bin\Debug\HTMLSteganographyWinFormV2.exe
+C:\Users\Artsiom_Sushchenia\Desktop\urbn test\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\bin\Debug\HTMLSteganographyWinFormV2.pdb
+C:\Users\Artsiom_Sushchenia\Desktop\urbn test\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.csprojAssemblyReference.cache
+C:\Users\Artsiom_Sushchenia\Desktop\urbn test\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.Form1.resources
+C:\Users\Artsiom_Sushchenia\Desktop\urbn test\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.Properties.Resources.resources
+C:\Users\Artsiom_Sushchenia\Desktop\urbn test\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.csproj.GenerateResource.cache
+C:\Users\Artsiom_Sushchenia\Desktop\urbn test\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.csproj.CoreCompileInputs.cache
+C:\Users\Artsiom_Sushchenia\Desktop\urbn test\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.exe
+C:\Users\Artsiom_Sushchenia\Desktop\urbn test\MarkupStegoWindowsFormsV2\HTMLSteganographyWinFormV2\obj\Debug\HTMLSteganographyWinFormV2.pdb
