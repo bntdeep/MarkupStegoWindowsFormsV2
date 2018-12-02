@@ -30,10 +30,15 @@ namespace HTMLSteganographyWinFormV2
             DeleteTempArchive(tempArchiveStorage);
             File.Copy(file, Path.ChangeExtension(tempArchiveStorage, ".zip"));
         }
-        public static void CopyFileAndChangeExtentionToDOCX(String file, string fileDestination)
+
+        public static void CopyFileAndChangeExtentionToDOCX
+            (String file, string fileDestination)
         {
             File.Copy(file, Path.ChangeExtension(fileDestination, ".docx"),true);
         }
+
+
+
         public static void DeleteTempArchive(string tempArchive)
         {
             File.Delete(tempArchive);
